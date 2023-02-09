@@ -1,0 +1,488 @@
+@charset "UTF-8";
+
+:root {
+  --color-text: hsl(229, 25%, 31%);
+  --color-score: hsl(229, 64%, 46%);
+  --color-header-outline: hsl(217, 16%, 45%);
+  --gradient-start-paper: hsl(230, 89%, 62%);
+  --gradient-end-paper: hsl(230, 89%, 65%);
+  --gradient-start-scissors: hsl(39, 89%, 49%);
+  --gradient-end-scissors: hsl(40, 84%, 53%);
+  --gradient-start-rock: hsl(349, 71%, 52%);
+  --gradient-end-rock: hsl(349, 70%, 56%);
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+
+/*-_-_-_-_-_-_- typography -_-_-_-_-_-_- */
+
+/*---------------------------------------------------------------------------------------------------*/
+
+:root {
+  --font-base: 'Barlow Semi Condensed', sans-serif;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+
+/*-_-_-_-_-_-_- colors -_-_-_-_-_-_- */
+
+/*---------------------------------------------------------------------------------------------------*/
+
+/* Fonction toute prête pour gérer Rem et Pixel en fonction des supports des navigateurs. */
+
+:root {
+  --gap: 8px;
+}
+
+:root {
+  --container-padding: 20px;
+  --container-width: 100%;
+}
+
+.container {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  padding-left: calc(50% - var(--container-width) / 2);
+  padding-right: calc(50% - var(--container-width) / 2);
+}
+
+.container-full {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-margin {
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--container-width);
+}
+
+.container-narrow {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+table {
+  border: 0;
+  border-spacing: 0;
+  empty-cells: show;
+  border-collapse: 0;
+}
+
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 62.5%;
+  -ms-text-size-adjust: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  font-family: var(--font-base);
+  color: var(--color-text);
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  border: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  border-radius: 0;
+}
+
+/* input[type="number"] {
+     -webkit-appearance: textfield;
+     -moz-appearance:textfield;
+} */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: #020024;
+  background: radial-gradient(circle, #1f3756 0%, #141539 100%);
+  padding-top: 48px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 704px;
+  margin-inline: auto;
+  border: 2px solid var(--color-header-outline);
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin-bottom: 60px;
+}
+
+.logo img {
+  display: block;
+}
+
+.score {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: 150px;
+  height: 115px;
+  border-radius: 8px;
+  background: #fff;
+  line-height: 1;
+}
+
+.score span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-score);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.score strong {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.rules-btn {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  text-transform: uppercase;
+  color: #fff;
+  border: 2px solid var(--color-header-outline);
+  border-radius: 8px;
+  width: 130px;
+  height: 42px;
+  cursor: pointer;
+}
+
+.choices {
+  position: relative;
+  margin-inline: auto;
+  width: 704px;
+  height: 432px;
+  background: url("../images/bg-triangle.svg") center no-repeat;
+}
+
+.choices .choice {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1px 6px 0 rgba(0, 0, 0, 0.5), inset 0 -10px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.choices .choice span {
+  transition: all 0.2s ease;
+  display: grid;
+  place-items: center;
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: inset 0 4px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.choices .choice img {
+  height: 80px;
+}
+
+.choices .choice:active {
+  box-shadow: none;
+  margin-top: 4px;
+}
+
+.choices .choice:active.rock {
+  margin-top: 0;
+  margin-bottom: -4px;
+}
+
+.choices .choice:active span {
+  box-shadow: inset 0 -4px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.choices .choice.paper {
+  left: 0;
+  top: 0;
+  transform: translateX(50%);
+  background-image: radial-gradient(circle, var(--gradient-start-paper) 0%, var(--gradient-end-paper) 100%);
+}
+
+.choices .choice.scissors {
+  right: 0;
+  top: 0;
+  transform: translateX(-50%);
+  background-image: radial-gradient(circle, var(--gradient-start-scissors) 0%, var(--gradient-end-scissors) 100%);
+}
+
+.choices .choice.rock {
+  left: 50%;
+  bottom: 4px;
+  transform: translate(-50%, 0);
+  background-image: radial-gradient(circle, var(--gradient-start-rock) 0%, var(--gradient-end-rock) 100%);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal .content {
+  width: 400px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 40px 32px;
+}
+
+.modal .content .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.modal .content .head .close {
+  cursor: pointer;
+}
+
+.modal .content .rule {
+  text-align: center;
+}
+
+@media only screen and (min-width: 1500px) {
+  :root {
+    --container-width: 1366px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

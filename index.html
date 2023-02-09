@@ -10,9 +10,41 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <script defer="" src="js/main.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-  
+    <header>
+      <p class="logo"><img src="images/logo.svg" alt="Rock Paper Scissors"></p>
+      <div class="score">
+        <p>
+        <span>Score</span>
+        <strong>12</strong>
+        </p>
+      </div>
+    </header>
+
+    <div class="choices">
+      <p class="choice paper"><span><img src="images/icon-paper.svg" alt=""></span></p>
+      <p class="choice scissors"><span><img src="images/icon-scissors.svg" alt=""></span></p>
+      <p class="choice rock"><span><img src="images/icon-rock.svg" alt=""></span></p>
+    </div>
+
+    <div class="rules-btn">Rules</div>
+
+    <div class="rules-modal modal">
+      <div class="content">
+        <div class="head">
+          <p class="title">Rules</p>
+          <p class="close"><img src="images/icon-close.svg" alt=""></p>
+        </div>
+        <div class="rule">
+          <img src="images/image-rules.svg" height="270" alt="">
+        </div>
+      </div>
+    </div>
   </body>
 </html>
