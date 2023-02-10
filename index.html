@@ -28,18 +28,34 @@
     </header>
 
     <div class="choices">
-      <p class="choice paper"><span><img src="images/icon-paper.svg" alt=""></span></p>
-      <p class="choice scissors"><span><img src="images/icon-scissors.svg" alt=""></span></p>
-      <p class="choice rock"><span><img src="images/icon-rock.svg" alt=""></span></p>
+      <p class="choice paper" rel="paper"><span></span></p>
+      <p class="choice scissors" rel="scissors"><span></span></p>
+      <p class="choice rock" rel="rock"><span></span></p>
     </div>
 
-    <div class="rules-btn">Rules</div>
+    <div class="battle">
+      <div class="you">
+        <p class="title">You picked</p>
+        <p class="choice scissors" rel="paper"><span></span></p>
+      </div>
+      <div class="action">
+        <p class="text">You lose</p>
+        <p class="btn">Play again</p>
+      </div>
+      <div class="computer">
+        <p class="title">The house picked</p>
+        <p class="waiting-choice"><span></span></p>
+        <p class="choice " style="display:none"><span></span></p>
+      </div>
+    </div>
+
+    <div class="rules-btn" onClick="OpenModal('rules')">Rules</div>
 
     <div class="rules-modal modal">
       <div class="content">
         <div class="head">
           <p class="title">Rules</p>
-          <p class="close"><img src="images/icon-close.svg" alt=""></p>
+          <p class="close" onClick="CloseModal()"><img src="images/icon-close.svg" alt=""></p>
         </div>
         <div class="rule">
           <img src="images/image-rules.svg" height="270" alt="">
