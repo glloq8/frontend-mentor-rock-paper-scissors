@@ -371,6 +371,11 @@ header {
 .score strong {
   font-size: 45px;
   font-weight: 700;
+  transition: ease-out;
+}
+
+.score strong.changing {
+  animation: score 500ms infinite;
 }
 
 .rules-btn {
@@ -525,6 +530,10 @@ header {
   margin-bottom: 50px;
 }
 
+.modal .content .head .title {
+  margin: 0;
+}
+
 .modal .content .head .close {
   cursor: pointer;
 }
@@ -561,6 +570,7 @@ header {
 .waiting-choice {
   background: none;
   box-shadow: none;
+  animation: waiting 1s infinite;
 }
 
 .waiting-choice span {
@@ -624,6 +634,18 @@ header {
   animation: pulse 1000ms infinite;
 }
 
+.reset {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  color: #fff;
+}
+
+.reset:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -647,6 +669,26 @@ header {
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes waiting {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes score {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
   }
 }
 

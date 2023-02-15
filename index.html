@@ -38,11 +38,11 @@
     <div class="battle">
       <div class="you">
         <p class="title">You picked</p>
-        <p class="choice scissors" rel="paper"><span></span></p>
+        <p class="choice" rel=""><span></span></p>
       </div>
       <div class="action">
-        <p class="text">You lose</p>
-        <p class="btn">Play again</p>
+        <p class="text"></p>
+        <p class="btn" onClick="StartNewGame()">Play again</p>
       </div>
       <div class="computer">
         <p class="title">The house picked</p>
@@ -52,6 +52,7 @@
     </div>
 
     <div class="rules-btn" onClick="OpenModal('rules')">Rules</div>
+    <p class="reset" onClick="resetScore()">Reset score</p>
 
     <div class="rules-modal modal">
       <div class="content">
