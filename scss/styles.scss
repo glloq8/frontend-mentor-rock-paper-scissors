@@ -28,9 +28,24 @@ header {
   border-radius: 16px;
   padding: 24px 32px;
   margin-bottom: 60px;
+
+  @include down(830) {
+    width: 60%;
+    margin-bottom: 170px;
+  }
+  @include down(830) {
+    margin-bottom: 70px;
+  }
 }
 .logo img {
   display: block;
+
+  @include down(830) {
+    max-width: 100px;
+  }
+  @include down(768) {
+    max-width: 80px;
+  }
 }
 .score {
   display: grid;
@@ -41,6 +56,15 @@ header {
   border-radius: 8px;
   background: #fff;
   line-height: 1;
+
+  @include down(830) {
+    max-width: 80px;
+    height: auto;
+    padding-block: 12px;
+  }
+  @include down(830) {
+    max-width: 60px;
+  }
 }
 .score span {
   display: block;
@@ -49,11 +73,22 @@ header {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  @include down(768) {
+    font-size: 10px;
+  }
 }
 .score strong {
   font-size: 45px;
   font-weight: 700;
   transition: ease-out;
+
+  @include down(830) {
+    font-size: 32px;
+  }
+  @include down(768) {
+    font-size: 24px;
+  }
 }
 .score strong.changing {
   animation: score 500ms infinite;
@@ -72,6 +107,12 @@ header {
   width: 130px;
   height: 42px;
   cursor: pointer;
+
+  @include down(768) {
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+  }
 }
 
 /* CHOICES */
@@ -81,6 +122,17 @@ header {
   width: 704px;
   height: 432px;
   background: url('../images/bg-triangle.svg') center no-repeat;
+
+  @include down(830) {
+    width: 600px;
+    height: 350px;
+    background-size: contain;
+  }
+  @include down(768) {
+    width: 250px;
+    height: 250px;
+    background-size: contain;
+  }
 }
 .choice {
   display: grid;
@@ -92,6 +144,17 @@ header {
   //border: 24px solid;
   box-shadow: 1px 6px 0 rgba(0,0,0,.5), inset 0 -10px 0 rgba(0,0,0,.3);
   transition: all 0.2s ease;
+
+  @include down(830) {
+    width: 160px;
+    height: 160px;
+    box-shadow: 1px 3px 0 rgba(0,0,0,.5), inset 0 -5px 0 rgba(0,0,0,.3);
+  }
+  @include down(768) {
+    width: 105px;
+    height: 105px;
+    box-shadow: 1px 3px 0 rgba(0,0,0,.5), inset 0 -5px 0 rgba(0,0,0,.3);
+  }
 }
 .choice span {
   transition: all 0.2s ease;
@@ -102,9 +165,20 @@ header {
   border-radius: 50%;
   background: #fff;
   box-shadow: inset -0 4px 10px 2px rgba(0,0,0,.5);
-}
-.choice img {
-  height: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70px;
+
+  @include down(830) {
+    width: 125px;
+    height: 125px;
+    background-size: 60px;
+  }
+  @include down(768) {
+    width: 80px;
+    height: 80px;
+    background-size: 40px;
+  }
 }
 .choices .choice {
   cursor: pointer;
@@ -121,16 +195,20 @@ header {
     box-shadow: inset -0 -4px 10px 2px rgba(0,0,0,.5);
   }
 }
-.choice span {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 70px;
-}
 .choice.paper {
   left: 0;
   top: 0;
   transform: translateX(50%);
   background-image: radial-gradient(circle, var(--gradient-start-paper) 0%, var(--gradient-end-paper) 100%);
+
+  @include down(830) {
+    top: -50px;
+    left: -30px;
+  }
+  @include down(768) {
+    top: -30px;
+    left: -75px;
+  }
 }
 .choice.paper span {
   background-image: url('../images/icon-paper.svg');
@@ -140,6 +218,15 @@ header {
   top: 0;
   transform: translateX(-50%);
   background-image: radial-gradient(circle, var(--gradient-start-scissors) 0%, var(--gradient-end-scissors) 100%);
+
+  @include down(830) {
+    top: -50px;
+    right: -30px;
+  }
+  @include down(768) {
+    top: -30px;
+    right: -75px;
+  }
 }
 .choice.scissors span {
   background-image: url('../images/icon-scissors.svg');
@@ -149,6 +236,13 @@ header {
   bottom: 4px;
   transform: translate(-50%, 0);
   background-image: radial-gradient(circle, var(--gradient-start-rock) 0%, var(--gradient-end-rock) 100%);
+
+  @include down(830) {
+    bottom: -50px;
+  }
+  @include down(768) {
+    bottom: -30px;
+  }
 }
 .choice.rock span {
   background-image: url('../images/icon-rock.svg');
@@ -169,6 +263,10 @@ header {
   border-radius: 8px;
   padding: 40px 32px;
   margin-inline: auto;
+
+  @include down(830) {
+    max-width: 300px;
+  }
 }
 .modal .content .head {
   display: flex;
@@ -200,6 +298,14 @@ header {
   justify-content: space-between;
   align-items: center;
   transition: 350ms ease-out;
+
+  @include down(830) {
+    max-width: 80%;
+  }
+  @include down(768) {
+    max-width: 80%;
+    gap: 24px;
+  }
 }
 .battle .choice {
   position: relative;
@@ -209,17 +315,35 @@ header {
   transform: none;
   transform: scale(1.45);
   transform-origin: top center;
+
+  @include down(830) {
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+  }
+  @include down(830) {
+    margin-top: -30px;
+  }
 }
 .waiting-choice {
   @extend .choice;
   background: none;
   box-shadow: none;
   animation: waiting 1s infinite;
+
+  @include down(830) {
+    margin-left: 55px;
+  }
 }
 .waiting-choice span {
   background: rgba(0,0,0,.3);
   opacity: .5;
   box-shadow: none;
+
+  @include down(830) {
+    margin-inline: auto;
+  }
 }
 /* //BATTLE */
 
@@ -227,12 +351,57 @@ header {
 .result {
   width: 950px;
 }
+
+@include down(830) {
+  .battle .you .choice {
+    margin-left: 6px;
+  }
+  .battle .computer .choice {
+    margin-left: 50px;
+  }
+  max-width: 100%;
+}
+@include down(768) {
+  .battle .you, .battle .computer {
+    display: flex;
+    flex-direction: column-reverse;
+    flex: 1;
+  }
+  .battle .you .choice,
+  .battle .computer .choice {
+    transform: none;
+    margin-inline: auto;
+    margin-bottom: 24px;
+  }
+  .result {
+    align-items: flex-start;
+  }
+  .battle .you .title,
+  .battle .computer .title {
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+}
+
 .action {
   visibility: hidden;
   position: relative;
   text-align: center;
   text-transform: uppercase;
   padding-top: 170px;
+
+  @include down(830) {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @include down(768) {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .action .text {
   text-shadow: 2px 2px 5px #000;
@@ -241,6 +410,10 @@ header {
   font-weight: 700;
   margin-bottom: 24px;
   line-height: 1;
+
+  @include down(768) {
+    font-size: 40px;
+  }
 }
 .action .btn {
   display: flex;
@@ -274,6 +447,11 @@ header {
   bottom: 32px;
   left: 32px;
   color: #fff;
+
+  @include down(768) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .reset:hover {
   text-decoration: underline;
